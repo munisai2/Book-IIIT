@@ -12,4 +12,4 @@ def home(request):
     return render(request,"scheduling/home.html")
 
 def registerPage(request):
-    return render(request,"scheduling/signup.html")
+    return render(request,"scheduling/Sign up.html")
