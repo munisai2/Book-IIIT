@@ -13,3 +13,6 @@ def homePage(request):
 
 def registerPage(request):
     return render(request,"scheduling/Sign up.html")
+
+def loginPage(request):
+    return render(request,"scheduling/Login.html")
