@@ -12,6 +12,9 @@ def homePage(request):
     return render(request,"scheduling/home.html")
 
 def registerPage(request):
+    if request.method == "POST":
+        fname=request.POST['FNAME']
+
     return render(request,"scheduling/Sign up.html")
 
 def loginPage(request):
