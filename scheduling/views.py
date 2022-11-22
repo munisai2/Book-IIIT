@@ -8,7 +8,7 @@ from .models import *
 
 # Create your views here.
 
-def home(request):
+def homePage(request):
     return render(request,"scheduling/home.html")
 
 def registerPage(request):
