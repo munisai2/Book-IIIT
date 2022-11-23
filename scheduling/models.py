@@ -19,3 +19,17 @@ class Resource(models.Model):
 
     def __str__(self):
         return f'{self.number}.  {self.category} with {self.seats} for {self.category} people'
+
+class user_detail(models.Model):
+    
+    username=models.CharField(max_length=100,null=True)
+    email=models.EmailField(primary_key=True)
+    password = models.CharField(max_length=50)
+    confirm_password = models.CharField(max_length=50)
+    mobile_number =models.CharField(max_length=14)
+
+    def __str__(self):
+        return self.username
+
+    def save(self, *args, **kwargs):
+        super(user_detail, self).save(*args, **kwargs)

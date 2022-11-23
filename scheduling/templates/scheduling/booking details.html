@@ -1,23 +1,32 @@
 <!doctype html>
 <html lang="en">
+  {% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
+    <link rel="stylesheet" href="{% static "scheduling/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "scheduling/css/form-validation.css" %}">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="form-validation.css" rel="stylesheet">
-
-  </head style = marginleft : 10px>
+  </head style = marginleft : 10px>``
 
 
   <body class="bg-light" style ="margin-left:160px; margin-top: 40px;">
+    {% load static %}
     <div class="container">
 
     <div class="row g-0">
-
+      {% comment %} {% for message in messages %}
+            <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                <strong>
+                    <center>{{message}}</center>
+                </strong>
+                <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                    <span aria-hidden='true'>&times;</span> 
+                </button>     
+            </div>
+      {% endfor %} {% endcomment %}
 
       <div class="col-md-7 col-lg-10">
         <h1 class="mb-3" style="padding-top:40px; padding-left:65px" >BOOKING DETAILS</h1>
@@ -124,7 +133,9 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="form-validation.js"></script>
+    <script src="{% static "scheduling/json/form-validation.js" %}"></script>
+    
+    
 
   </body>
 </html>

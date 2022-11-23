@@ -22,13 +22,25 @@
     <div class="login">
         <!-- <form action="">
         </form> -->
+        <form action="" method ="POST">
+            {% for message in messages %}
+            <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                <strong>
+                    <center>{{message}}</center>
+                </strong>
+                <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                    <span aria-hidden='true'>&times;</span> 
+                </button>     
+            </div>
+        {% endfor %}
+        {% csrf_token %}
         <h1>LOGIN</h1>
         <label for="UserEmail">Email</label>
         <input type="text" name="UserEmail" id="UserEmail">
         <label for="UserPassword">Password</label>
         <input type="password" name="UserPassword" id="UserPassword">
         <button>SUBMIT</button>
-
+        </form>
     </div>
 </body>
 </html>

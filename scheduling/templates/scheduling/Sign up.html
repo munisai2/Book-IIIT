@@ -19,22 +19,31 @@
             <li><a href="\signup">Register</a></li>
         </ul>
     </div>
-
     <div class="login">
         <form action="" method ="POST">
+            {% for message in messages %}
+            <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                <strong>
+                    <center>{{message}}</center>
+                </strong>
+                <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                    <span aria-hidden='true'>&times;</span> 
+                </button>     
+            </div>
+        {% endfor %}
         {% csrf_token %}
         <h1>REGISTER</h1>
-        <label for="Name">UserName</label>
+        <label for="Name" >UserName</label>
         <input type="text" name="Name" id="Name">
         <label for="UserEmail">Email</label>
         <input type="text" name="UserEmail" id="UserEmail">
         <label for="UserPassword">Password</label>
         <input type="password" name="UserPassword" id="UserPassword">
         <label for="UserPassword">Confirm Password</label>
-        <input type="password" name="UserPassword" id="UserPassword">
+        <input type="password" name="ConfirmPassword" id="UserPassword">
         <label for="Mobile">Mobile Number</label>
         <input type="tel" name="Mobile" id="Mobile">
-        <button><a href="/login">SUBMIT</a></button>
+        <button>SUBMIT</button>
         </form> 
 
     </div>
