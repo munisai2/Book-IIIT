@@ -28,18 +28,27 @@
           <li><a href="#about">about</a> </li>
           <li><a href="#rooms">rooms</a> </li>
           <li><a href="#contact">contact</a> </li>
-          <li><a href="#contact">Login</a> </li>
-          <li><a href="#contact">Sing Up</a> </li>
+          <li><a href="\login">Login</a> </li>
+          <li><a href="\signup">Sing Up</a> </li>
           
           
            
-          <li> <button class="primary-btn">BOOK NOW</button> </li>
+          <li> <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a> </li>
         </ul>
         <span class="fa fa-bars" onclick="menutoggle()"></span>
       </div>
     </div>
   </header>
-
+{% for message in messages %}
+            <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                <strong>
+                    <center>{{message}}</center>
+                </strong>
+                <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                    <span aria-hidden='true'>&times;</span> 
+                </button>     
+            </div>
+        {% endfor %}
 
   <script>
     var menulist = document.getElementById('menulist');

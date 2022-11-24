@@ -33,3 +33,29 @@ class user_detail(models.Model):
 
     def save(self, *args, **kwargs):
         super(user_detail, self).save(*args, **kwargs)
+
+class Booking_detail(models.Model):
+    TIME=(
+        ("1hr","1 Hour"),
+        ("2hr","2 Hour"),
+        ("3hr","3 Hour"),
+        ("4hr+","4 Hour +"),
+        
+    )
+    TIME_PARITY=(
+        ("AM","AM"),
+        ("PM","PM"),
+        
+    )
+    fullname=models.CharField(max_length=100,null=True)
+    date=models.DateField()
+    slot = models.CharField(max_length=5,choices=TIME)
+    start= models.TimeField()
+    start_parity=models.CharField(max_length=2,choices=TIME_PARITY)
+    end= models.TimeField()
+    end_parity=models.CharField(max_length=2,choices=TIME_PARITY)
+    description=models.TextField()
+    def __str__(self):
+        return self.fullname
+    
+

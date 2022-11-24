@@ -4,3 +4,4 @@ from .models import *
 
 admin.site.register(Resource)
 admin.site.register(user_detail)
+admin.site.register(Booking_detail)
