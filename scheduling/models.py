@@ -47,6 +47,7 @@ class Booking_detail(models.Model):
         ("PM","PM"),
         
     )
+    id=models.AutoField(primary_key=True)
     fullname=models.CharField(max_length=100,null=True)
     date=models.DateField()
     slot = models.CharField(max_length=5,choices=TIME)
@@ -56,6 +57,6 @@ class Booking_detail(models.Model):
     end_parity=models.CharField(max_length=2,choices=TIME_PARITY)
     description=models.TextField()
     def __str__(self):
-        return self.fullname
+        return str(self.id) +". " +self.fullname
     
 
